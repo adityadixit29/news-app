@@ -11,7 +11,7 @@ const ViewNews = () => {
     setlike(!like);
   }
   useEffect(() => {
-    axios.get(`http://localhost:4000/api/v1/addnews/getsinglenews/${id}`,{
+    axios.get(`https://news-app-backend-snowy.vercel.app/api/v1/addnews/getsinglenews/${id}`,{
       withCredentials: true,
       headers: {
         "Content-Type": "application/json",
