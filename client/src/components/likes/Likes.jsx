@@ -12,7 +12,7 @@ const Likes = () => {
         .then(response => {
           const likes = response.data.likes;
   
-            const xaxisCategories = likes.map(like => like.title); // Use _id as x-axis categories
+            const xaxisCategories = likes.map(like => like.title.substring(0,10)); // Use _id as x-axis categories
             const likesData = likes.map(like => like.likes);
           
   
