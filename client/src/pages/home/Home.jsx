@@ -5,7 +5,7 @@ import {motion} from "framer-motion"
 import Demo from './Demo';
 const Home = () => {
   const [news, setnews] = useState([]);
-  const [loading,setloading] = useState(false);
+  const [loading,setloading] = useState(true);
   useEffect(() => {
     axios.get("https://news-app-backend-snowy.vercel.app/api/v1/addnews/getnews",{
       withCredentials: true,
@@ -14,19 +14,20 @@ const Home = () => {
       }
     })
       .then(response => {
-        setloading(true);
+        setloading(false);
         setnews(response.data.getnews)
       })
       .catch(error => {
+        setloading(false);
         console.log(error);
       })
   }, [])
   return (
     <>
     <Demo/>
-      {loading? <motion.div className='w-full border-2 p-10 flex flex-col gap-10 sm:flex-row justify-center items-center sm:items-start sm:justify-start h-auto'>
+       <motion.div className='w-full border-2 p-10 flex flex-col gap-10 sm:flex-row justify-center items-center sm:items-start sm:justify-start h-auto'>
       {news.map(newsItem => (
-        <Link key={newsItem._id} to={`/viewnews/${newsItem._id}`}>
+        {loading? "Loading..." : <Link key={newsItem._id} to={`/viewnews/${newsItem._id}`}>
           <div key={newsItem._id} className='border-2  p-6 w-[318px] h-[374px] shadow rounded-2xl'>
           <h1 className='tracking-wider font-bold font-titleFont'>{newsItem.title.substring(0,30)}{".."}</h1>
           <h4 className='tracking-wider font-bodyFont text-slate-500'>{newsItem.subtitle}</h4>
@@ -49,7 +50,7 @@ const Home = () => {
 
       ))}
 
-    </motion.div> : {"Loading..."}}
+    </motion.div>}
     </>
     
   )
