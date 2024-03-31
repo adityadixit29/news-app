@@ -21,13 +21,16 @@ const Home = () => {
         setloading(false);
         console.log(error);
       })
-  }, [])
+  }, []);
+   if (loading) {
+    return <div>Loading...</div>; 
+  }
   return (
     <>
     <Demo/>
        <motion.div className='w-full border-2 p-10 flex flex-col gap-10 sm:flex-row justify-center items-center sm:items-start sm:justify-start h-auto'>
       {news.map(newsItem => (
-        {loading? "Loading..." : <Link key={newsItem._id} to={`/viewnews/${newsItem._id}`}>
+        <Link key={newsItem._id} to={`/viewnews/${newsItem._id}`}>
           <div key={newsItem._id} className='border-2  p-6 w-[318px] h-[374px] shadow rounded-2xl'>
           <h1 className='tracking-wider font-bold font-titleFont'>{newsItem.title.substring(0,30)}{".."}</h1>
           <h4 className='tracking-wider font-bodyFont text-slate-500'>{newsItem.subtitle}</h4>
@@ -50,7 +53,7 @@ const Home = () => {
 
       ))}
 
-    </motion.div>}
+    </motion.div>
     </>
     
   )
