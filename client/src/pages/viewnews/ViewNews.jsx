@@ -26,7 +26,7 @@ const ViewNews = () => {
   }, [id])
   return (
     <div className='p-8 flex justify-center items-center'>
-      <div className='shadow-lg transition-all hover:shadow-2xl p-5 rounded-2xl w-[60%] h-auto'>
+      <div className='shadow-lg transition-all hover:shadow-2xl p-5 rounded-2xl w-[89%] h-auto'>
         <div className='mb-6'>
           <div className='font-titleFont font-semibold text-2xl'>{news.title}</div>
           <div className='font-titleFont tracking-wider'>{news.subtitle}</div>
