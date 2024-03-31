@@ -12,7 +12,7 @@ const Views = () => {
         .then(response => {
           const Views = response.data.views;
   
-            const xaxisCategories = Views.map(view => view.title); // Use _id as x-axis categories
+            const xaxisCategories = Views.map(view => view.title.substring(0,10)); // Use _id as x-axis categories
             const viewsData = Views.map(view => view.views);
           
   
