@@ -22,13 +22,13 @@ const Home = () => {
         console.log(error);
       })
   }, []);
-   if (loading) {
-    return <div>Loading...</div>; 
-  }
+
   return (
     <>
     <Demo/>
-       <motion.div className='w-full border-2 p-10 flex flex-col gap-10 sm:flex-row justify-center items-center sm:items-start sm:justify-start h-auto'>
+       {loading ? (
+      <div>Loading...</div>
+    ) : (<motion.div className='w-full border-2 p-10 flex flex-col gap-10 sm:flex-row justify-center items-center sm:items-start sm:justify-start h-auto'>
       {news.map(newsItem => (
         <Link key={newsItem._id} to={`/viewnews/${newsItem._id}`}>
           <div key={newsItem._id} className='border-2  p-6 w-[318px] h-[374px] shadow rounded-2xl'>
@@ -54,6 +54,7 @@ const Home = () => {
       ))}
 
     </motion.div>
+          )}
     </>
     
   )
