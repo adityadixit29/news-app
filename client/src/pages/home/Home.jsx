@@ -6,7 +6,7 @@ import Demo from './Demo';
 const Home = () => {
   const [news, setnews] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:4000/api/v1/addnews/getnews",{
+    axios.get("https://news-app-backend-snowy.vercel.app/api/v1/addnews/getnews",{
       withCredentials: true,
       headers: {
         "Content-Type": "application/json",
