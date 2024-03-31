@@ -42,39 +42,39 @@ const Addnews = () => {
         <section>
           <form onSubmit={submitHandler} className='flex flex-col gap-4'>
            <div className='flex gap-4 items-center font-titleFont text-lg'>
-           <label className='w-[19%]'>Tittle: </label> <input type="text"
+           <label className='w-[19%] text-sm sm:text-lg '>Tittle: </label> <input type="text"
               placeholder='Enter your title'
               required
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className='border-2 border-gray-300 outline-none rounded-md w-[500px] px-2 lg:w-[795px] font-bodyFont text-base'
+              className='border-2 border-gray-300 outline-none rounded-md w-[180px] sm:w-[500px] px-2 lg:w-[795px] font-bodyFont text-base'
             />
            </div>
           <div className='flex gap-4 items-center font-titleFont text-lg'>
-          <label className='w-[19%]'>Subtitle:</label> <input type="text"
+          <label className='w-[19%] text-sm sm:text-lg '>Subtitle:</label> <input type="text"
               placeholder='Enter subtitle'
               required
               value={subtitle}
               onChange={(e) => setSubtitle(e.target.value)}
-              className='border-2 border-gray-300 outline-none rounded-md w-[500px] lg:w-[795px] px-2 font-bodyFont text-base'
+              className='border-2 border-gray-300 outline-none rounded-md w-[180px] sm:w-[500px] lg:w-[795px] px-2 font-bodyFont text-base'
             />
           </div>
            <div className='flex gap-4 font-titleFont text-lg'>
-           <label className='w-[19%]'>Image URL:</label> <input type="text"
+           <label className='w-[19%] text-sm sm:text-lg '>Image URL:</label> <input type="text"
               placeholder='Enter image link: https://www...'
               required
               value={image}
               onChange={(e) => setImage(e.target.value)}
-              className='border-2 border-gray-300 outline-none rounded-md w-[500px] px-2 lg:w-[795px] font-bodyFont text-base'
+              className='border-2 border-gray-300 outline-none rounded-md w-[180px] sm:w-[500px] px-2 lg:w-[795px] font-bodyFont text-base'
             />
            </div>
             <div className='flex gap-4 font-titleFont text-lg'>
-            <label className='w-[19%]'>Content:</label> <textarea type="text"
+            <label className='w-[19%] text-sm sm:text-lg '>Content:</label> <textarea type="text"
               placeholder='Write content here...'
               required
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              className='border-2 border-gray-300 outline-none rounded-md w-[500px] px-2 lg:w-[795px] font-bodyFont text-base h-36'
+              className='border-2 border-gray-300 outline-none rounded-md w-[180px] sm:w-[500px] px-2 lg:w-[795px] font-bodyFont text-base h-36'
             />
             </div>
             <div className='flex justify-end'>
