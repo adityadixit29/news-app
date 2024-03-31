@@ -8,7 +8,7 @@ const Likes = () => {
       });
       useEffect(() => {           
         // Extracting grouped data for chart
-        axios.get(`http://localhost:4000/api/v1/addnews/getlikes`)
+        axios.get(`https://news-app-backend-snowy.vercel.app/api/v1/addnews/getlikes`)
         .then(response => {
           const likes = response.data.likes;
   
