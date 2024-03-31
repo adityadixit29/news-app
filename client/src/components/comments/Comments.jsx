@@ -12,7 +12,7 @@ const Comments = () => {
         .then(response => {
           const comments = response.data.comments;
   
-            const xaxisCategories = comments.map(comment => comment.title); // Use _id as x-axis categories
+            const xaxisCategories = comments.map(comment => comment.title.substring(0,10)); // Use _id as x-axis categories
             const commentsData = comments.map(comment => comment.comments);
           
   
