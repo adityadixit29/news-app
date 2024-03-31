@@ -5,6 +5,7 @@ import {motion} from "framer-motion"
 import Demo from './Demo';
 const Home = () => {
   const [news, setnews] = useState([]);
+  const [loading,setloading] = useState(false);
   useEffect(() => {
     axios.get("https://news-app-backend-snowy.vercel.app/api/v1/addnews/getnews",{
       withCredentials: true,
@@ -13,6 +14,7 @@ const Home = () => {
       }
     })
       .then(response => {
+        setloading(true);
         setnews(response.data.getnews)
       })
       .catch(error => {
@@ -22,7 +24,7 @@ const Home = () => {
   return (
     <>
     <Demo/>
-    <motion.div className='w-full border-2 p-10 flex flex-col gap-10 sm:flex-row justify-center items-center sm:items-start sm:justify-start h-auto'>
+      {loading? <motion.div className='w-full border-2 p-10 flex flex-col gap-10 sm:flex-row justify-center items-center sm:items-start sm:justify-start h-auto'>
       {news.map(newsItem => (
         <Link key={newsItem._id} to={`/viewnews/${newsItem._id}`}>
           <div key={newsItem._id} className='border-2  p-6 w-[318px] h-[374px] shadow rounded-2xl'>
@@ -47,7 +49,7 @@ const Home = () => {
 
       ))}
 
-    </motion.div>
+    </motion.div> : {"Loading..."}}
     </>
     
   )
