@@ -36,6 +36,7 @@ const Likes = () => {
           options={{
             chart: {
               id: "basic-bar",
+              width:"100%",
               toolbar: {
                 show: false,
               },
@@ -83,8 +84,8 @@ const Likes = () => {
             },
           ]}
           type="area"
-          width="100%"
-          height="100%"
+{/*           width="100%" */}
+{/*           height="100%" */}
         />
       </div>
     </div>
