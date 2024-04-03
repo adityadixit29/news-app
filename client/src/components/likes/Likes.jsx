@@ -71,8 +71,8 @@ const Likes = () => {
         },
     ]}
     type="area"
-    width="500"
-    height="400"
+    width="auto"
+    height="auto"
 />
 </div>
 </div>
