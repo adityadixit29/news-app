@@ -69,7 +69,8 @@ const Likes = () => {
                 breakpoint: 570, // Adjust the chart when the screen width is less than or equal to 480px
                 options: {
                   chart: {
-                    height: 300, // Set a fixed height for smaller screens
+                    height: 300,
+                    width: 300// Set a fixed height for smaller screens
                   },
                 },
               },
@@ -83,7 +84,7 @@ const Likes = () => {
           ]}
           type="area"
           width="100%"
-          height="auto"
+          height="100%"
         />
       </div>
     </div>
