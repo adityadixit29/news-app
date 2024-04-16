@@ -1,6 +1,6 @@
 # News Application
 
-In this project we have cloned the News Application project
+In this project we have built the News Application project
 
 ## Technologies Used
 
